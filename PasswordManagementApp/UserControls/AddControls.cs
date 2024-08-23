@@ -35,6 +35,12 @@ namespace PasswordManagementApp.UserControls.HomeControls
                 {
                     await userDataService.StoreUserPasswordAsync(saveId, platformName, userName, email, website, password);
                     MessageBox.Show("Şifre başarıyla kaydedildi");
+                    tbxPlatformName.Clear();
+                    tbxUsername.Clear();
+                    tbxUsername.Clear();
+                    tbxEmail.Clear();
+                    tbxWebsite.Clear();
+                    tbxPassword.Clear();
                 }
                 else
                 {

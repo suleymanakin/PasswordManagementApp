@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace PasswordManagementApp.Classes
 {
-    
     internal class EncryptionHelper
     {
         private string _base64Key;
@@ -20,18 +17,34 @@ namespace PasswordManagementApp.Classes
             public string Base64iv { get; set; }
         }
 
+        public EncryptionHelper()
+        {
+            string filePath = @"..\..\..\UserFiles\secretkey.json";
+            LoadSecretKeyFromFile(filePath);
+        }
+
+        public void LoadSecretKeyFromFile(string filePath)
+        {
+            try
+            {
+                // Dosyayı oku ve içeriği nesneye dönüştür
+                string jsonString = File.ReadAllText(filePath);
+                EncryptionData data = JsonConvert.DeserializeObject<EncryptionData>(jsonString);
+
+                _base64Key = data.Base64key;
+                _base64IV = data.Base64iv;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Dosyayı okurken bir hata oluştu: {ex.Message}");
+                throw;
+            }
+        }
 
         public string Encrypt(string plainText)
         {
             if (string.IsNullOrEmpty(plainText))
                 throw new ArgumentNullException(nameof(plainText));
-
-            string jsonFilePath = "C:\\Users\\suley\\source\\repos\\PasswordManagementApp\\PasswordManagementApp\\secretkey.json";
-            string jsonString = File.ReadAllText(jsonFilePath);
-            // JSON'u nesneye dönüştürme
-            EncryptionData data = JsonConvert.DeserializeObject<EncryptionData>(jsonString);
-            _base64Key = data.Base64key;
-            _base64IV = data.Base64iv;
 
             using (Aes aesAlg = Aes.Create())
             {
@@ -59,13 +72,6 @@ namespace PasswordManagementApp.Classes
             if (string.IsNullOrEmpty(cipherText))
                 throw new ArgumentNullException(nameof(cipherText));
 
-            string jsonFilePath = "C:\\Users\\suley\\source\\repos\\PasswordManagementApp\\PasswordManagementApp\\secretkey.json";
-            string jsonString = File.ReadAllText(jsonFilePath);
-            // JSON'u nesneye dönüştürme
-            EncryptionData data = JsonConvert.DeserializeObject<EncryptionData>(jsonString);
-            _base64Key = data.Base64key;
-            _base64IV = data.Base64iv;
-
             using (Aes aesAlg = Aes.Create())
             {
                 aesAlg.Key = Convert.FromBase64String(_base64Key);
@@ -86,6 +92,7 @@ namespace PasswordManagementApp.Classes
             }
         }
 
+        // Anahtar ve IV üretme fonksiyonları
         public string GenerateKey(int size = 32)
         {
             using (var rng = new RNGCryptoServiceProvider())
@@ -95,6 +102,7 @@ namespace PasswordManagementApp.Classes
                 return Convert.ToBase64String(key);
             }
         }
+
         public string GenerateIV(int size = 16)
         {
             using (var rng = new RNGCryptoServiceProvider())
