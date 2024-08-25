@@ -12,6 +12,8 @@ namespace PasswordManagementApp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new MainForm());
+            //Application.Run(new Main());
+
         }
     }
 }

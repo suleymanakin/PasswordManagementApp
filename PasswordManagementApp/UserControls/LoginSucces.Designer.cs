@@ -1,6 +1,6 @@
 ﻿namespace PasswordManagementApp.UserControls
 {
-    partial class pnlViewControls
+    partial class pnlLoginSucces
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,76 +28,62 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pnlHeader = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            dgwViewPasswords = new DataGridView();
-            pnlHeader.SuspendLayout();
+            lblVerifiedUser = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgwViewPasswords).BeginInit();
             SuspendLayout();
-            // 
-            // pnlHeader
-            // 
-            pnlHeader.Controls.Add(pictureBox1);
-            pnlHeader.Controls.Add(label1);
-            pnlHeader.Dock = DockStyle.Top;
-            pnlHeader.Location = new Point(0, 0);
-            pnlHeader.Name = "pnlHeader";
-            pnlHeader.Size = new Size(982, 125);
-            pnlHeader.TabIndex = 2;
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.List;
-            pictureBox1.Location = new Point(25, 37);
+            pictureBox1.ErrorImage = Properties.Resources.Verified;
+            pictureBox1.Image = Properties.Resources.Verified;
+            pictureBox1.Location = new Point(451, 256);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(50, 50);
+            pictureBox1.Size = new Size(80, 80);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 34;
+            pictureBox1.TabIndex = 32;
             pictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
-            label1.Location = new Point(90, 35);
+            label1.Location = new Point(394, 356);
             label1.Name = "label1";
-            label1.Size = new Size(276, 54);
+            label1.Size = new Size(194, 54);
             label1.TabIndex = 0;
-            label1.Text = "View Passwords";
+            label1.Text = "Successful";
             // 
-            // dgwViewPasswords
+            // lblVerifiedUser
             // 
-            dgwViewPasswords.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgwViewPasswords.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwViewPasswords.Location = new Point(25, 131);
-            dgwViewPasswords.Name = "dgwViewPasswords";
-            dgwViewPasswords.RowHeadersWidth = 51;
-            dgwViewPasswords.Size = new Size(932, 619);
-            dgwViewPasswords.TabIndex = 3;
+            lblVerifiedUser.AutoSize = true;
+            lblVerifiedUser.Font = new Font("Tajawal", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblVerifiedUser.Location = new Point(474, 456);
+            lblVerifiedUser.Name = "lblVerifiedUser";
+            lblVerifiedUser.Size = new Size(34, 41);
+            lblVerifiedUser.TabIndex = 0;
+            lblVerifiedUser.Text = "--";
             // 
-            // pnlViewControls
+            // pnlLoginSucces
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(dgwViewPasswords);
-            Controls.Add(pnlHeader);
-            Name = "pnlViewControls";
+            Controls.Add(lblVerifiedUser);
+            Controls.Add(label1);
+            Controls.Add(pictureBox1);
+            Name = "pnlLoginSucces";
             Size = new Size(982, 753);
-            Load += pnlViewControls_Load;
-            pnlHeader.ResumeLayout(false);
-            pnlHeader.PerformLayout();
+            Load += pnlLoginSucces_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgwViewPasswords).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Panel pnlHeader;
-        private Label label1;
-        private DataGridView dgwViewPasswords;
         private PictureBox pictureBox1;
+        private Label label1;
+        private Label lblVerifiedUser;
     }
 }

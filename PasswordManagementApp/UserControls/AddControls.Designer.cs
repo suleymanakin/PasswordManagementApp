@@ -63,10 +63,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.add_password;
-            pictureBox1.Location = new Point(315, 27);
+            pictureBox1.Image = Properties.Resources.Add;
+            pictureBox1.Location = new Point(25, 37);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(70, 70);
+            pictureBox1.Size = new Size(50, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 35;
             pictureBox1.TabStop = false;
@@ -75,7 +75,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
-            label1.Location = new Point(391, 35);
+            label1.Location = new Point(96, 35);
             label1.Name = "label1";
             label1.Size = new Size(277, 54);
             label1.TabIndex = 0;

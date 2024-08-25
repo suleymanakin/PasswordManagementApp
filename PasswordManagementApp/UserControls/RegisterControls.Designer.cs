@@ -57,10 +57,10 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.register;
-            pictureBox1.Location = new Point(378, 27);
+            pictureBox1.Image = Properties.Resources.Register;
+            pictureBox1.Location = new Point(25, 37);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(70, 70);
+            pictureBox1.Size = new Size(50, 50);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 31;
             pictureBox1.TabStop = false;
@@ -69,7 +69,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
-            label1.Location = new Point(450, 35);
+            label1.Location = new Point(90, 35);
             label1.Name = "label1";
             label1.Size = new Size(155, 54);
             label1.TabIndex = 0;

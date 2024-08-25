@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pnlAboutControls));
-            pnlHeader = new Panel();
+            pictureBox1 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -41,26 +41,26 @@
             linkLabel4 = new LinkLabel();
             label6 = new Label();
             label7 = new Label();
-            pictureBox1 = new PictureBox();
-            pnlHeader.SuspendLayout();
+            pnlHeader = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlHeader.SuspendLayout();
             SuspendLayout();
             // 
-            // pnlHeader
+            // pictureBox1
             // 
-            pnlHeader.Controls.Add(pictureBox1);
-            pnlHeader.Controls.Add(label1);
-            pnlHeader.Dock = DockStyle.Top;
-            pnlHeader.Location = new Point(0, 0);
-            pnlHeader.Name = "pnlHeader";
-            pnlHeader.Size = new Size(982, 125);
-            pnlHeader.TabIndex = 1;
+            pictureBox1.Image = Properties.Resources.About;
+            pictureBox1.Location = new Point(25, 37);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(50, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 37;
+            pictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
-            label1.Location = new Point(441, 35);
+            label1.Location = new Point(90, 35);
             label1.Name = "label1";
             label1.Size = new Size(170, 54);
             label1.TabIndex = 0;
@@ -169,15 +169,15 @@
             label7.TabIndex = 7;
             label7.Text = "||";
             // 
-            // pictureBox1
+            // pnlHeader
             // 
-            pictureBox1.Image = Properties.Resources.about;
-            pictureBox1.Location = new Point(371, 27);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(70, 70);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 37;
-            pictureBox1.TabStop = false;
+            pnlHeader.Controls.Add(pictureBox1);
+            pnlHeader.Controls.Add(label1);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(0, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Size = new Size(982, 125);
+            pnlHeader.TabIndex = 1;
             // 
             // pnlAboutControls
             // 
@@ -196,16 +196,14 @@
             Controls.Add(pnlHeader);
             Name = "pnlAboutControls";
             Size = new Size(982, 753);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlHeader.ResumeLayout(false);
             pnlHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel pnlHeader;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -218,5 +216,6 @@
         private Label label6;
         private Label label7;
         private PictureBox pictureBox1;
+        private Panel pnlHeader;
     }
 }

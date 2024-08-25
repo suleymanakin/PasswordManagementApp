@@ -37,7 +37,9 @@ public class AuthService
         }
         else
         {
-            throw new Exception($"Giriş hatası: {response.ReasonPhrase}");
+            //throw new Exception($"Login error. Please check your login information.");
+            MessageBox.Show($"Login error. Please check your login information.","Login Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            return "";
         }
     }
 }

@@ -12,6 +12,7 @@ namespace PasswordManagementApp.UserControls
         private readonly UserDataService userDataService;
         private MainFormHelper helper;
         private MainForm mainForm;
+        public string Email;
 
         public pnlLoginControls(MainForm form)
         {
@@ -30,18 +31,13 @@ namespace PasswordManagementApp.UserControls
                 string email = tbxUserEmail.Text;
                 string password = tbxPassword.Text;
                 string userId = await authService.SignInUserAsync(email, password);
+                Email = email;
 
                 if (!string.IsNullOrEmpty(userId))
                 {
                     userDataService.SetUserCredentials(userId, email);
                     helper.menuAfterLoggingIn();
-                    helper.LoadControl(new pnlHomeControls(MainForm.Instance));
-                    helper.LoadControl(new pnlHomeControls(MainForm.Instance));
-                    MessageBox.Show("Giriş başarılı");
-                }
-                else
-                {
-                    MessageBox.Show("Giriş başarısız.");
+                    helper.LoadControl(new pnlLoginSucces(this));
                 }
             }
             catch (Exception ex)

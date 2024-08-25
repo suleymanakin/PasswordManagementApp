@@ -43,6 +43,16 @@ namespace PasswordManagementApp
             InitializeComponent();
             InitializeFirebase("C:\\Users\\suley\\source\\repos\\PasswordManagementApp\\PasswordManagementApp\\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json");
             helper = new MainFormHelper(this);
+
+            btnLogin.Click += ChangeButtonColor;
+            btnRegister.Click += ChangeButtonColor;
+            btnHome.Click += ChangeButtonColor;
+            btnGenerate.Click += ChangeButtonColor;
+            btnAbout.Click += ChangeButtonColor;
+            btnSettings.Click += ChangeButtonColor;
+
+            // Ýlk durumda butonlarýn rengi siyah olsun
+            SetButtonsDefaultColor();
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -100,6 +110,8 @@ namespace PasswordManagementApp
         {
             helper.LoadControl(new pnlGoobye());
             helper.menuAfterLoggingOut();
+            SetButtonsDefaultColor();
+
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
@@ -110,6 +122,42 @@ namespace PasswordManagementApp
         private void btnSettings_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlSettingsControls());
+        }
+
+        private void ChangeButtonColor(object sender, EventArgs e)
+        {
+            // Tüm butonlarýn rengini siyah yap
+            SetButtonsDefaultColor();
+
+            // Týklanan butonu bul ve rengini mavi yap
+            Button clickedButton = sender as Button;
+            if (clickedButton != null)
+            {
+                clickedButton.ForeColor = ColorTranslator.FromHtml("#077EFF");
+                string imgFile = @"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\" + clickedButton.Text.Trim() + "Blue.png";
+                clickedButton.Image = Image.FromFile(imgFile);
+            }
+        }
+
+        private void SetButtonsDefaultColor()
+        {
+            btnLogin.ForeColor = Color.DimGray;
+            btnLogin.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\Login.png");
+
+            btnRegister.ForeColor = Color.DimGray;
+            btnRegister.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\Register.png");
+
+            btnHome.ForeColor = Color.DimGray;
+            btnHome.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\Home.png");
+
+            btnGenerate.ForeColor = Color.DimGray;
+            btnGenerate.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\Generate.png");
+
+            btnAbout.ForeColor = Color.DimGray;
+            btnAbout.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\About.png");
+
+            btnSettings.ForeColor = Color.DimGray;
+            btnSettings.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\Settings.png");
         }
     }
 }

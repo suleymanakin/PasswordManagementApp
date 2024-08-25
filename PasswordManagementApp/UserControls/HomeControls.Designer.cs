@@ -17,12 +17,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pnlHomeControls));
             pnlHeader = new Panel();
+            pictureBox1 = new PictureBox();
             label1 = new Label();
             btnAddAPassword = new Button();
             btnUpdateAPassword = new Button();
             btnDeleteAPassword = new Button();
             btnListPasswords = new Button();
-            pictureBox1 = new PictureBox();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -37,11 +37,21 @@
             pnlHeader.Size = new Size(982, 125);
             pnlHeader.TabIndex = 2;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Home;
+            pictureBox1.Location = new Point(25, 37);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(50, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 33;
+            pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
-            label1.Location = new Point(466, 35);
+            label1.Location = new Point(90, 35);
             label1.Name = "label1";
             label1.Size = new Size(121, 54);
             label1.TabIndex = 0;
@@ -66,7 +76,7 @@
             // btnUpdateAPassword
             // 
             btnUpdateAPassword.Font = new Font("Tajawal", 12F, FontStyle.Bold);
-            btnUpdateAPassword.Image = Properties.Resources.update;
+            btnUpdateAPassword.Image = Properties.Resources.Update;
             btnUpdateAPassword.ImageAlign = ContentAlignment.MiddleLeft;
             btnUpdateAPassword.Location = new Point(291, 324);
             btnUpdateAPassword.Name = "btnUpdateAPassword";
@@ -96,7 +106,7 @@
             // btnListPasswords
             // 
             btnListPasswords.Font = new Font("Tajawal", 12F, FontStyle.Bold);
-            btnListPasswords.Image = Properties.Resources.list;
+            btnListPasswords.Image = Properties.Resources.List;
             btnListPasswords.ImageAlign = ContentAlignment.MiddleLeft;
             btnListPasswords.Location = new Point(291, 454);
             btnListPasswords.Name = "btnListPasswords";
@@ -108,16 +118,6 @@
             btnListPasswords.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnListPasswords.UseVisualStyleBackColor = true;
             btnListPasswords.Click += btnListPasswords_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.home;
-            pictureBox1.Location = new Point(396, 27);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(70, 70);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 33;
-            pictureBox1.TabStop = false;
             // 
             // pnlHomeControls
             // 
