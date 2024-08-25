@@ -19,8 +19,11 @@ namespace PasswordManagementApp.Classes
 
         public EncryptionHelper()
         {
-            string filePath = @"..\..\..\UserFiles\secretkey.json";
-            LoadSecretKeyFromFile(filePath);
+            string filePath = @"..\..\..\UserFiles\SecretKey.json";
+            if (File.Exists(filePath))
+            {
+                LoadSecretKeyFromFile(filePath);
+            }
         }
 
         public void LoadSecretKeyFromFile(string filePath)

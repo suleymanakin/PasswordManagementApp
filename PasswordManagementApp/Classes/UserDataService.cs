@@ -19,7 +19,6 @@ public class UserDataService
     public void SetUserCredentials(string userId, string userEmail)
     {
         UserId = userId;
-        //UserEmail = userEmail.Replace(".", "_"); // E-posta adresindeki nokta (.) karakterini değiştirmek
         UserEmail = userEmail;
     }
 
@@ -68,14 +67,18 @@ public class UserDataService
 
             foreach (var document in snapshot.Documents)
             {
+                if (document.Id == "key")
+                {
+                    continue;
+                }
                 var decryptedData = new Dictionary<string, object>
-            {
-                { "PlatformName", encryptionHelper.Decrypt(document.GetValue<string>("PlatformName")) },
-                { "UserName", encryptionHelper.Decrypt(document.GetValue<string>("UserName")) },
-                { "Email", encryptionHelper.Decrypt(document.GetValue<string>("Email")) },
-                { "Website", encryptionHelper.Decrypt(document.GetValue<string>("Website")) },
-                { "Password", encryptionHelper.Decrypt(document.GetValue<string>("Password")) }
-            };
+                {
+                    { "PlatformName", encryptionHelper.Decrypt(document.GetValue<string>("PlatformName")) },
+                    { "UserName", encryptionHelper.Decrypt(document.GetValue<string>("UserName")) },
+                    { "Email", encryptionHelper.Decrypt(document.GetValue<string>("Email")) },
+                    { "Website", encryptionHelper.Decrypt(document.GetValue<string>("Website")) },
+                    { "Password", encryptionHelper.Decrypt(document.GetValue<string>("Password")) }
+                };
 
                 passwordList.Add(decryptedData);
             }

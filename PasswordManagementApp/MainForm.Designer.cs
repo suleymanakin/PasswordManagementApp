@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             pnlLeftSide = new Panel();
             pnlMenu = new Panel();
+            btnSettings = new Button();
             btnAbout = new Button();
             btnLogout = new Button();
             btnGenerate = new Button();
@@ -63,6 +64,7 @@
             // 
             // pnlMenu
             // 
+            pnlMenu.Controls.Add(btnSettings);
             pnlMenu.Controls.Add(btnAbout);
             pnlMenu.Controls.Add(btnLogout);
             pnlMenu.Controls.Add(btnGenerate);
@@ -74,6 +76,22 @@
             pnlMenu.Name = "pnlMenu";
             pnlMenu.Size = new Size(300, 603);
             pnlMenu.TabIndex = 1;
+            // 
+            // btnSettings
+            // 
+            btnSettings.Dock = DockStyle.Top;
+            btnSettings.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnSettings.Image = Properties.Resources.Settings;
+            btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSettings.Location = new Point(0, 450);
+            btnSettings.Name = "btnSettings";
+            btnSettings.Padding = new Padding(30, 5, 5, 5);
+            btnSettings.Size = new Size(300, 75);
+            btnSettings.TabIndex = 17;
+            btnSettings.Text = " Settings";
+            btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSettings.UseVisualStyleBackColor = true;
+            btnSettings.Click += btnSettings_Click;
             // 
             // btnAbout
             // 
@@ -278,5 +296,6 @@
         private Button btnRegister;
         private Button btnAbout;
         private Panel panelLogo;
+        private Button btnSettings;
     }
 }

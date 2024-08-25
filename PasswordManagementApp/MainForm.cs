@@ -44,6 +44,24 @@ namespace PasswordManagementApp
             InitializeFirebase("C:\\Users\\suley\\source\\repos\\PasswordManagementApp\\PasswordManagementApp\\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json");
             helper = new MainFormHelper(this);
         }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            string folderPath = @"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\UserFiles\";
+            string fileName = "SecretKey.json";
+
+            string filePath = Path.Combine(folderPath, fileName);
+
+            panelLogo.Visible = false;
+            helper.menuAfterLoggingOut();
+            helper.LoadControl(new pnlWelcome());
+
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("SecretKey bulunamadý. Oluþturmak için yönlendiriliyorsunuz.\n" +
+                    "SecretKey oluþturulmadan þifreleme ve çözümleme iþlemi yapýlamaz.");
+                helper.LoadControl(new pnlSettingsControls());
+            }
+        }
 
         private void InitializeFirebase(string credentialsPath)
         {
@@ -89,11 +107,9 @@ namespace PasswordManagementApp
             helper.LoadControl(new pnlAboutControls());
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void btnSettings_Click(object sender, EventArgs e)
         {
-            panelLogo.Visible = false;
-            helper.menuAfterLoggingOut();
-            helper.LoadControl(new pnlWelcome());
+            helper.LoadControl(new pnlSettingsControls());
         }
     }
 }
