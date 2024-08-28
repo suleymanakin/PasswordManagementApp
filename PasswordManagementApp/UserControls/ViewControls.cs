@@ -13,12 +13,12 @@ namespace PasswordManagementApp.UserControls
     public partial class pnlViewControls : UserControl
     {
         private readonly UserDataService userDataService;
-        private readonly EncryptionHelper encryptionHelper;
+        EncryptionHelper encryptionHelper = new EncryptionHelper();
 
         public pnlViewControls(MainForm form)
         {
             InitializeComponent();
-            string credentialsPath = @"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json";
+            string credentialsPath = @"..\..\..\UserFiles\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json";
             string projectId = "fir-test-3647d";
             userDataService = new UserDataService(credentialsPath, projectId);
         }

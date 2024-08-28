@@ -29,7 +29,9 @@ namespace PasswordManagementApp.UserControls
             {
                 if (password == rePassword)
                 {
-                    FirebaseService firebaseService = new FirebaseService("C:\\Users\\suley\\source\\repos\\PasswordManagementApp\\PasswordManagementApp\\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json");
+                    string credentialsPath = @"..\..\..\UserFiles\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json";
+
+                    FirebaseService firebaseService = new FirebaseService(@"..\..\..\UserFiles\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json");
 
                     try
                     {

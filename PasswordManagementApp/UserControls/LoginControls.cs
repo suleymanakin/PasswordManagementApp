@@ -18,7 +18,7 @@ namespace PasswordManagementApp.UserControls
         {
             InitializeComponent();
             authService = new AuthService("AIzaSyDJvsRx7pzZw5gcw7gsT_SGl9su8ktJSnI");
-            string credentialsPath = @"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json";
+            string credentialsPath = @"..\..\..\UserFiles\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json";
             string projectId = "fir-test-3647d";
             userDataService = new UserDataService(credentialsPath, projectId);
             helper = new MainFormHelper(form);

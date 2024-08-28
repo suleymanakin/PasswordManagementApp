@@ -16,7 +16,7 @@ namespace PasswordManagementApp.UserControls.HomeControls
         public pnlAddControls(MainForm form)
         {
             InitializeComponent();
-            string credentialsPath = @"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json";
+            string credentialsPath = @"..\..\..\UserFiles\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json";
             string projectId = "fir-test-3647d";
             userDataService = new UserDataService(credentialsPath, projectId);
             mainForm = form ?? throw new ArgumentNullException(nameof(form), "(add)MainForm cannot be null.");
