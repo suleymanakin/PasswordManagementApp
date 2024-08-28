@@ -26,5 +26,15 @@ namespace PasswordManagementApp.UserControls
         {
             helper.LoadControl(new pnlViewControls(MainForm.Instance));
         }
+
+        private void btnUpdateAPassword_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Update operations are performed from the List Password menu.","İnfo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void btnDeleteAPassword_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Delete operations are performed from the List Password menu.", "İnfo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

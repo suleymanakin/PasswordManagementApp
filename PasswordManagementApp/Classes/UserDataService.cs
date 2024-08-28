@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 public class UserDataService
 {
     private readonly FirestoreDb firestoreDb;
+    private string SaveID;
     public static string? UserId { get; private set; }
     public static string? UserEmail { get; private set; }
 
@@ -33,9 +34,11 @@ public class UserDataService
             DocumentReference passwordDocRef = userCollection.Document(saveId);
             EncryptionHelper encryptionHelper = new EncryptionHelper();
 
+            MessageBox.Show(saveId);
 
             var passwordData = new Dictionary<string, object>
             {
+                { "PasswordID", encryptionHelper.Encrypt(saveId) },
                 { "PlatformName",encryptionHelper.Encrypt( platformName) },
                 { "UserName", encryptionHelper.Encrypt(userName) },
                 { "Email", encryptionHelper.Encrypt(email) },
@@ -67,12 +70,9 @@ public class UserDataService
 
             foreach (var document in snapshot.Documents)
             {
-                if (document.Id == "key")
-                {
-                    continue;
-                }
                 var decryptedData = new Dictionary<string, object>
                 {
+                    { "PasswordID", encryptionHelper.Decrypt(document.GetValue<string>("PasswordID")) },
                     { "PlatformName", encryptionHelper.Decrypt(document.GetValue<string>("PlatformName")) },
                     { "UserName", encryptionHelper.Decrypt(document.GetValue<string>("UserName")) },
                     { "Email", encryptionHelper.Decrypt(document.GetValue<string>("Email")) },
@@ -88,6 +88,102 @@ public class UserDataService
         catch (Exception ex)
         {
             MessageBox.Show($"Veri alma hatası: {ex.Message}");
+            throw;
+        }
+    }
+
+    public async Task<bool> UpdateUserPasswordsAsync(string passwordID, string platformName, string username, string email, string website, string password)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(UserEmail))
+                throw new Exception("Kullanıcı e-posta adresi mevcut değil.");
+
+            CollectionReference userCollection = firestoreDb.Collection(UserEmail);
+            QuerySnapshot snapshot = await userCollection.GetSnapshotAsync();
+            EncryptionHelper encryptionHelper = new EncryptionHelper();
+
+            var updatedData = new Dictionary<string, object>
+        {
+            { "PasswordID", encryptionHelper.Encrypt(passwordID) },
+            { "PlatformName", encryptionHelper.Encrypt(platformName) },
+            { "UserName", encryptionHelper.Encrypt(username) },
+            { "Email", encryptionHelper.Encrypt(email) },
+            { "Website", encryptionHelper.Encrypt(website) },
+            { "Password", encryptionHelper.Encrypt(password) }
+        };
+
+            bool isUpdated = false;
+
+            foreach (var document in snapshot.Documents)
+            {
+                // Veritabanındaki şifrelenmiş veriyi çöz
+                string decryptedPasswordID = encryptionHelper.Decrypt(document.GetValue<string>("PasswordID"));
+
+                // Çözülen veri ile karşılaştırma yap
+                if (decryptedPasswordID == passwordID)
+                {
+                    DocumentReference docRef = userCollection.Document(document.Id);
+                    await docRef.UpdateAsync(updatedData);
+                    MessageBox.Show("Güncelleme işlemi başarılı!");
+                    isUpdated = true;
+                    break; // Güncelleme işlemi başarılıysa döngüden çık
+                }
+            }
+
+            if (!isUpdated)
+            {
+                MessageBox.Show("Güncellenecek kayıt bulunamadı.");
+            }
+
+            return isUpdated;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Güncelleme hatası: {ex.Message}");
+            throw;
+        }
+    }
+
+    public async Task<bool> DeleteUserPasswordAsync(string passwordID)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(UserEmail))
+                throw new Exception("Kullanıcı e-posta adresi mevcut değil.");
+
+            CollectionReference userCollection = firestoreDb.Collection(UserEmail);
+            QuerySnapshot snapshot = await userCollection.GetSnapshotAsync();
+            EncryptionHelper encryptionHelper = new EncryptionHelper();
+
+            bool isDeleted = false;
+
+            foreach (var document in snapshot.Documents)
+            {
+                // Veritabanındaki şifrelenmiş veriyi çöz
+                string decryptedPasswordID = encryptionHelper.Decrypt(document.GetValue<string>("PasswordID"));
+
+                // Çözülen veri ile karşılaştırma yap
+                if (decryptedPasswordID == passwordID)
+                {
+                    DocumentReference docRef = userCollection.Document(document.Id);
+                    await docRef.DeleteAsync();
+                    MessageBox.Show("Silme işlemi başarılı!");
+                    isDeleted = true;
+                    break; // Silme işlemi başarılıysa döngüden çık
+                }
+            }
+
+            if (!isDeleted)
+            {
+                MessageBox.Show("Silinecek kayıt bulunamadı.");
+            }
+
+            return isDeleted;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Silme hatası: {ex.Message}");
             throw;
         }
     }

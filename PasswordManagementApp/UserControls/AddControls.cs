@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PasswordManagementApp.Classes;
+using System;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace PasswordManagementApp.UserControls.HomeControls
     public partial class pnlAddControls : UserControl
     {
         private readonly UserDataService userDataService;
+        EncryptionHelper encryptionHelper = new EncryptionHelper();
         private MainForm mainForm;
 
         public pnlAddControls(MainForm form)
@@ -55,31 +57,8 @@ namespace PasswordManagementApp.UserControls.HomeControls
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            int length = 32;
-
-            string characters = "0123456789" +
-                "abcdefghijklmnopqrstuvwxyz" +
-                "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
-                "!@#$%^&*()_-+=<>?";
-            string password = GeneratePassword(length, characters);
+            string password = encryptionHelper.GeneratePassword();
             tbxPassword.Text = password;
-        }
-
-        private string GeneratePassword(int length, string characters)
-        {
-            StringBuilder result = new StringBuilder(length);
-            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
-            {
-                byte[] buffer = new byte[32];
-
-                for (int i = 0; i < length; i++)
-                {
-                    rng.GetBytes(buffer);
-                    ulong num = BitConverter.ToUInt64(buffer, 0);
-                    result.Append(characters[(int)(num % (uint)characters.Length)]);
-                }
-            }
-            return result.ToString();
         }
     }
 }

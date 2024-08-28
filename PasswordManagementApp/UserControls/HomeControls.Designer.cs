@@ -87,6 +87,7 @@
             btnUpdateAPassword.TextAlign = ContentAlignment.MiddleLeft;
             btnUpdateAPassword.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnUpdateAPassword.UseVisualStyleBackColor = true;
+            btnUpdateAPassword.Click += btnUpdateAPassword_Click;
             // 
             // btnDeleteAPassword
             // 
@@ -102,6 +103,7 @@
             btnDeleteAPassword.TextAlign = ContentAlignment.MiddleLeft;
             btnDeleteAPassword.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDeleteAPassword.UseVisualStyleBackColor = true;
+            btnDeleteAPassword.Click += btnDeleteAPassword_Click;
             // 
             // btnListPasswords
             // 

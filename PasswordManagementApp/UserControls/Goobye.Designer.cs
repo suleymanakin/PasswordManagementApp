@@ -34,12 +34,12 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Tajawal", 12F);
-            label1.Location = new Point(374, 366);
+            label1.Font = new Font("Tajawal", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(314, 356);
             label1.Name = "label1";
-            label1.Size = new Size(307, 28);
+            label1.Size = new Size(355, 41);
             label1.TabIndex = 0;
-            label1.Text = "Bizi tercih ettiğiniz için teşekkürler";
+            label1.Text = "Thank you for choosing us.";
             // 
             // pnlGoobye
             // 

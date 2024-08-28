@@ -16,15 +16,12 @@ namespace PasswordManagementApp
         public Button BtnLogout => btnLogout;
         public Button BtnAbout => btnAbout;
         public Panel PanelLogo => panelLogo;
-        //public Panel PanelGreating => panelGreating;
         public Panel PanelContent => pnlContent;
 
         private MainFormHelper helper;
         private static MainForm? instance;
 
-        //public bool logo = false;
         private static bool isFirebaseInitialized = false;
-
 
         public static MainForm Instance
         {
@@ -94,6 +91,7 @@ namespace PasswordManagementApp
         private void btnRegister_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlRegisterControls(this));
+            panelLogo.Visible = true;
         }
 
         public void btnHome_Click(object sender, EventArgs e)
@@ -104,6 +102,7 @@ namespace PasswordManagementApp
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlGenerateControls());
+            panelLogo.Visible = true;
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -111,17 +110,18 @@ namespace PasswordManagementApp
             helper.LoadControl(new pnlGoobye());
             helper.menuAfterLoggingOut();
             SetButtonsDefaultColor();
-
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlAboutControls());
+            panelLogo.Visible = true;
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlSettingsControls());
+            panelLogo.Visible = true;
         }
 
         private void ChangeButtonColor(object sender, EventArgs e)

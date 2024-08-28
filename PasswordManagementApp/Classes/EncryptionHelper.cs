@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
@@ -44,6 +45,8 @@ namespace PasswordManagementApp.Classes
             }
         }
 
+        // Encrypt(Şifreleme) fonksiyonu
+
         public string Encrypt(string plainText)
         {
             if (string.IsNullOrEmpty(plainText))
@@ -70,6 +73,7 @@ namespace PasswordManagementApp.Classes
             }
         }
 
+        // Decrypt(Çözümleme) fonksiyonu
         public string Decrypt(string cipherText)
         {
             if (string.IsNullOrEmpty(cipherText))
@@ -95,7 +99,7 @@ namespace PasswordManagementApp.Classes
             }
         }
 
-        // Anahtar ve IV üretme fonksiyonları
+        // Key üretme fonksiyonu
         public string GenerateKey(int size = 32)
         {
             using (var rng = new RNGCryptoServiceProvider())
@@ -106,6 +110,7 @@ namespace PasswordManagementApp.Classes
             }
         }
 
+        // IV üretme fonksiyonu
         public string GenerateIV(int size = 16)
         {
             using (var rng = new RNGCryptoServiceProvider())
@@ -114,6 +119,30 @@ namespace PasswordManagementApp.Classes
                 rng.GetBytes(iv);
                 return Convert.ToBase64String(iv);
             }
+        }
+
+        // Randon Parola üretme fonksiyonu
+        public string GeneratePassword(int length = 32)
+        {
+            StringBuilder result = new StringBuilder(length);
+            string characters = "0123456789" +
+                "abcdefghijklmnopqrstuvwxyz" +
+                "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+                "!@#$%^&*()_-+=<>?";
+
+            using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
+            {
+                byte[] buffer = new byte[32];
+
+                for (int i = 0; i < length; i++)
+                {
+                    rng.GetBytes(buffer);
+                    ulong num = BitConverter.ToUInt64(buffer, 0);
+                    result.Append(characters[(int)(num % (uint)characters.Length)]);
+                }
+            }
+
+            return result.ToString();
         }
     }
 }

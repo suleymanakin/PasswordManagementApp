@@ -103,11 +103,11 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Tajawal", 12F, FontStyle.Bold);
-            btnAdd.Location = new Point(353, 541);
+            btnAdd.Image = Properties.Resources.Save;
+            btnAdd.Location = new Point(665, 471);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(400, 40);
+            btnAdd.Size = new Size(88, 50);
             btnAdd.TabIndex = 7;
-            btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
             btnAdd.Click += btnAdd_Click;
             // 
@@ -191,9 +191,9 @@
             // btnGenerate
             // 
             btnGenerate.Font = new Font("Tajawal", 12F, FontStyle.Bold);
-            btnGenerate.Location = new Point(353, 481);
+            btnGenerate.Location = new Point(353, 471);
             btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(400, 40);
+            btnGenerate.Size = new Size(306, 50);
             btnGenerate.TabIndex = 6;
             btnGenerate.Text = "Generate";
             btnGenerate.UseVisualStyleBackColor = true;
