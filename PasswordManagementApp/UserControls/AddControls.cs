@@ -36,7 +36,7 @@ namespace PasswordManagementApp.UserControls.HomeControls
                 if (platformName != "" && userName != "" && email != "" && password != "")
                 {
                     await userDataService.StoreUserPasswordAsync(saveId, platformName, userName, email, website, password);
-                    MessageBox.Show("Şifre başarıyla kaydedildi");
+                    MessageBox.Show("Password successfully saved","Success",MessageBoxButtons.OK, MessageBoxIcon.None);
                     tbxPlatformName.Clear();
                     tbxUsername.Clear();
                     tbxUsername.Clear();
@@ -46,12 +46,12 @@ namespace PasswordManagementApp.UserControls.HomeControls
                 }
                 else
                 {
-                    MessageBox.Show("Lütfen zorunlu(*) alanları doldurduğunuzdan emin olun!", "Hata");
+                    MessageBox.Show("Please make sure to fill in the mandatory (*) fields!", "Warning", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Veri kaydetme hatası: {ex.Message}");
+                MessageBox.Show($"Data saving error: {ex.Message}","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

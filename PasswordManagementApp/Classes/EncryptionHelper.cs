@@ -40,7 +40,7 @@ namespace PasswordManagementApp.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Dosyayı okurken bir hata oluştu: {ex.Message}");
+                MessageBox.Show($"An error occurred while reading the file: {ex.Message}","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 throw;
             }
         }

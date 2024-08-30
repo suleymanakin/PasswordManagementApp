@@ -22,7 +22,7 @@ namespace PasswordManagementApp.UserControls
 
         private void pnlSettingsControls_Load(object sender, EventArgs e)
         {
-            string folderPath = @"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\UserFiles\";
+            string folderPath = @"..\..\..\UserFiles\";
             string fileName = "SecretKey.json";
 
             string filePath = Path.Combine(folderPath, fileName);
@@ -41,18 +41,18 @@ namespace PasswordManagementApp.UserControls
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Dosya okuma sırasında hata oluştu: {ex.Message}");
+                    MessageBox.Show($"Dosya okuma sırasında hata oluştu: {ex.Message}","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Dosya bulunamadı");
+                MessageBox.Show("File not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnGenerateSecretKey_Click(object sender, EventArgs e)
         {
-            string folderPath = @"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\UserFiles\";
+            string folderPath = @"..\..\..\UserFiles\";
             string fileName = "SecretKey.json"; // Oluşturmak istediğiniz JSON dosyasının adı
             string filePath = Path.Combine(folderPath, fileName);
 
@@ -71,11 +71,11 @@ namespace PasswordManagementApp.UserControls
                 // Dosyayı yazma
                 File.WriteAllText(filePath, jsonContent);
 
-                MessageBox.Show($"JSON dosyası oluşturuldu, Sayfayı yenileyiniz.");
+                MessageBox.Show($"JSON file created, Please refresh the page.","Success",MessageBoxButtons.OK,MessageBoxIcon.None);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Dosya oluşturma sırasında bir hata oluştu: {ex.Message}");
+                MessageBox.Show($"An error occurred during file creation: {ex.Message}","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
             btnGenerateSecretKey.Enabled = false;

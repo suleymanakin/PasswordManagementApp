@@ -40,7 +40,7 @@ namespace FirebaseProject.Classes
             }
             catch (Exception ex)
             {
-                throw new Exception($"Kullanıcı oluşturma hatası: {ex.Message}");
+                throw new Exception($"User creation error: {ex.Message}");
             }
         }
     }

@@ -50,12 +50,12 @@ namespace PasswordManagementApp.UserControls
                 }
                 else
                 {
-                    MessageBox.Show("Kayıtlı veri bulunamadı.");
+                    MessageBox.Show("No saved data found.","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Veri yükleme hatası: {ex.Message}");
+                MessageBox.Show($"Data load error: {ex.Message}","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
@@ -91,7 +91,7 @@ namespace PasswordManagementApp.UserControls
             }
             else
             {
-                MessageBox.Show("Güncelleme başarısız oldu veya güncellenecek kayıt bulunamadı.");
+                MessageBox.Show("Update failed or no content found to update.","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
         }
 
@@ -107,7 +107,7 @@ namespace PasswordManagementApp.UserControls
             }
             else
             {
-                MessageBox.Show("Güncelleme başarısız oldu veya güncellenecek kayıt bulunamadı.");
+                MessageBox.Show("Deletion failed or no content found to delete.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

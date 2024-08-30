@@ -4,6 +4,7 @@ using PasswordManagementApp.Classes;
 using PasswordManagementApp.UserControls;
 using System;
 using System.Windows.Forms;
+using System.Net.NetworkInformation;
 
 namespace PasswordManagementApp
 {
@@ -38,7 +39,7 @@ namespace PasswordManagementApp
         public MainForm()
         {
             InitializeComponent();
-            InitializeFirebase("C:\\Users\\suley\\source\\repos\\PasswordManagementApp\\PasswordManagementApp\\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json");
+            InitializeFirebase(@"..\..\..\UserFiles\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json");
             helper = new MainFormHelper(this);
 
             btnLogin.Click += ChangeButtonColor;
@@ -53,7 +54,12 @@ namespace PasswordManagementApp
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-            string folderPath = @"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\UserFiles\";
+            if (!CheckInternetConnection())
+            {
+                MessageBox.Show("Please check your internet connection and try again.", "Ýnformation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            string folderPath = @"..\..\..\UserFiles\";
             string fileName = "SecretKey.json";
 
             string filePath = Path.Combine(folderPath, fileName);
@@ -64,8 +70,8 @@ namespace PasswordManagementApp
 
             if (!File.Exists(filePath))
             {
-                MessageBox.Show("SecretKey bulunamadý. Oluþturmak için yönlendiriliyorsunuz.\n" +
-                    "SecretKey oluþturulmadan þifreleme ve çözümleme iþlemi yapýlamaz.");
+                MessageBox.Show("SecretKey not found. You are being redirected to create it.\n" +
+                    "Encryption and decryption cannot be performed without creating a SecretKey.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 helper.LoadControl(new pnlSettingsControls());
             }
         }
@@ -134,7 +140,7 @@ namespace PasswordManagementApp
             if (clickedButton != null)
             {
                 clickedButton.ForeColor = ColorTranslator.FromHtml("#077EFF");
-                string imgFile = @"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\" + clickedButton.Text.Trim() + "Blue.png";
+                string imgFile = @"..\..\..\img\icons\" + clickedButton.Text.Trim() + "Blue.png";
                 clickedButton.Image = Image.FromFile(imgFile);
             }
         }
@@ -142,22 +148,36 @@ namespace PasswordManagementApp
         private void SetButtonsDefaultColor()
         {
             btnLogin.ForeColor = Color.DimGray;
-            btnLogin.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\Login.png");
+            btnLogin.Image = Image.FromFile(@"..\..\..\img\icons\Login.png");
 
             btnRegister.ForeColor = Color.DimGray;
-            btnRegister.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\Register.png");
+            btnRegister.Image = Image.FromFile(@"..\..\..\img\icons\Register.png");
 
             btnHome.ForeColor = Color.DimGray;
-            btnHome.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\Home.png");
+            btnHome.Image = Image.FromFile(@"..\..\..\img\icons\Home.png");
 
             btnGenerate.ForeColor = Color.DimGray;
-            btnGenerate.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\Generate.png");
+            btnGenerate.Image = Image.FromFile(@"..\..\..\img\icons\Generate.png");
 
             btnAbout.ForeColor = Color.DimGray;
-            btnAbout.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\About.png");
+            btnAbout.Image = Image.FromFile(@"..\..\..\img\icons\About.png");
 
             btnSettings.ForeColor = Color.DimGray;
-            btnSettings.Image = Image.FromFile(@"C:\Users\suley\source\repos\PasswordManagementApp\PasswordManagementApp\img\icons\Settings.png");
+            btnSettings.Image = Image.FromFile(@"..\..\..\img\icons\Settings.png");
+        }
+
+        public bool CheckInternetConnection()
+        {
+            try
+            {
+                Ping ping = new Ping();
+                PingReply reply = ping.Send("google.com", 1000);
+                return reply.Status == IPStatus.Success;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

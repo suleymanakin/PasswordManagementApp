@@ -28,7 +28,7 @@ public class UserDataService
         try
         {
             if (string.IsNullOrEmpty(UserEmail))
-                throw new Exception("Kullanıcı e-posta adresi mevcut değil.");
+                throw new Exception("User email address not available.");
 
             CollectionReference userCollection = firestoreDb.Collection(UserEmail);
             DocumentReference passwordDocRef = userCollection.Document(saveId);
@@ -50,7 +50,7 @@ public class UserDataService
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Veri kaydetme hatası: {ex.Message}");
+            MessageBox.Show($"Data saving error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             throw;
         }
     }
@@ -60,7 +60,7 @@ public class UserDataService
         try
         {
             if (string.IsNullOrEmpty(UserEmail))
-                throw new Exception("Kullanıcı e-posta adresi mevcut değil.");
+                throw new Exception("User email address not available.");
 
             CollectionReference userCollection = firestoreDb.Collection(UserEmail);
             QuerySnapshot snapshot = await userCollection.GetSnapshotAsync();
@@ -87,7 +87,7 @@ public class UserDataService
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Veri alma hatası: {ex.Message}");
+            MessageBox.Show($"Data retrieval error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             throw;
         }
     }
@@ -97,7 +97,7 @@ public class UserDataService
         try
         {
             if (string.IsNullOrEmpty(UserEmail))
-                throw new Exception("Kullanıcı e-posta adresi mevcut değil.");
+                throw new Exception("User email address not available.");
 
             CollectionReference userCollection = firestoreDb.Collection(UserEmail);
             QuerySnapshot snapshot = await userCollection.GetSnapshotAsync();
@@ -125,7 +125,7 @@ public class UserDataService
                 {
                     DocumentReference docRef = userCollection.Document(document.Id);
                     await docRef.UpdateAsync(updatedData);
-                    MessageBox.Show("Güncelleme işlemi başarılı!");
+                    MessageBox.Show("Update successful", "Succes", MessageBoxButtons.OK, MessageBoxIcon.None);
                     isUpdated = true;
                     break; // Güncelleme işlemi başarılıysa döngüden çık
                 }
@@ -133,14 +133,14 @@ public class UserDataService
 
             if (!isUpdated)
             {
-                MessageBox.Show("Güncellenecek kayıt bulunamadı.");
+                MessageBox.Show("No content found to update.", "İnformation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             return isUpdated;
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Güncelleme hatası: {ex.Message}");
+            MessageBox.Show($"Update error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             throw;
         }
     }
@@ -150,7 +150,7 @@ public class UserDataService
         try
         {
             if (string.IsNullOrEmpty(UserEmail))
-                throw new Exception("Kullanıcı e-posta adresi mevcut değil.");
+                throw new Exception("User email address not available.");
 
             CollectionReference userCollection = firestoreDb.Collection(UserEmail);
             QuerySnapshot snapshot = await userCollection.GetSnapshotAsync();
@@ -168,7 +168,7 @@ public class UserDataService
                 {
                     DocumentReference docRef = userCollection.Document(document.Id);
                     await docRef.DeleteAsync();
-                    MessageBox.Show("Silme işlemi başarılı!");
+                    MessageBox.Show("Deletion successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
                     isDeleted = true;
                     break; // Silme işlemi başarılıysa döngüden çık
                 }
@@ -176,14 +176,14 @@ public class UserDataService
 
             if (!isDeleted)
             {
-                MessageBox.Show("Silinecek kayıt bulunamadı.");
+                MessageBox.Show("No content found to delete.", "İnformation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             return isDeleted;
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"Silme hatası: {ex.Message}");
+            MessageBox.Show($"Deletion error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             throw;
         }
     }

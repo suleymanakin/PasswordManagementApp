@@ -36,7 +36,7 @@ namespace PasswordManagementApp.UserControls
                     try
                     {
                         string userId = await firebaseService.CreateUserAsync(email, password);
-                        MessageBox.Show("Kayıt başarılı, Giriş ekranına yönlendiriliyorsunuz.");
+                        MessageBox.Show("Registration successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
                         UserControl control = new UserControl();
                         mainForm.PanelContent.Controls.Clear();
                         control.Dock = DockStyle.Fill;
@@ -49,12 +49,12 @@ namespace PasswordManagementApp.UserControls
                 }
                 else
                 {
-                    MessageBox.Show("Şifreler uyuşmuyor! Lütfen aynı şifreleri girdiğinizden emin olun");
+                    MessageBox.Show("Passwords do not match! Please make sure you enter the same passwords.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Lütfen zorunlu(*) alanları doldurun.");
+                MessageBox.Show("Please fill in the mandatory (*) fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

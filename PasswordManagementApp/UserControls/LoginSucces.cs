@@ -31,7 +31,7 @@ namespace PasswordManagementApp.UserControls
             }
             else
             {
-                MessageBox.Show("Email bilgisi alınamıyor.");
+                MessageBox.Show("Unable to get email information.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

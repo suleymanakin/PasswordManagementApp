@@ -53,7 +53,7 @@ namespace PasswordManagementApp.UserControls
             int lenght;
             if (!int.TryParse(tbxLength.Text, out lenght) || lenght <= 0)
             {
-                MessageBox.Show("Please enter a valid password length.");
+                MessageBox.Show("Please enter a valid password length.","Warning",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
             }
 
@@ -65,7 +65,7 @@ namespace PasswordManagementApp.UserControls
 
             if (string.IsNullOrEmpty(characters))
             {
-                MessageBox.Show("Please select at least one character set.");
+                MessageBox.Show("Please select at least one character set.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
