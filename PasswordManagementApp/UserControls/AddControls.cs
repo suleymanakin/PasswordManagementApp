@@ -13,18 +13,23 @@ namespace PasswordManagementApp.UserControls.HomeControls
         EncryptionHelper encryptionHelper = new EncryptionHelper();
         private MainForm mainForm;
 
+        // Constructor: Takes MainForm reference and initializes UserDataService
         public pnlAddControls(MainForm form)
         {
             InitializeComponent();
-            string credentialsPath = @"..\..\..\UserFiles\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json";
+            string folderDirect = @"..\..\..\UserFiles\"; // Firebase Folder Direct
+            string fileName = "fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json"; // Firebase Admin SDK file name
+            string filePath = folderDirect + fileName;
+            string credentialsPath = filePath;
             string projectId = "fir-test-3647d";
             userDataService = new UserDataService(credentialsPath, projectId);
             mainForm = form ?? throw new ArgumentNullException(nameof(form), "(add)MainForm cannot be null.");
         }
 
+        // Click event handler for the add password button
         private async void btnAdd_Click(object sender, EventArgs e)
         {
-            string saveId = Guid.NewGuid().ToString();
+            string saveId = Guid.NewGuid().ToString(); // Generate a unique ID
             string platformName = tbxPlatformName.Text;
             string userName = tbxUsername.Text;
             string email = tbxEmail.Text;
@@ -33,12 +38,13 @@ namespace PasswordManagementApp.UserControls.HomeControls
 
             try
             {
+                // If required fields are filled, save the data
                 if (platformName != "" && userName != "" && email != "" && password != "")
                 {
                     await userDataService.StoreUserPasswordAsync(saveId, platformName, userName, email, website, password);
-                    MessageBox.Show("Password successfully saved","Success",MessageBoxButtons.OK, MessageBoxIcon.None);
+                    MessageBox.Show("Password saved successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    // Clear all textboxes
                     tbxPlatformName.Clear();
-                    tbxUsername.Clear();
                     tbxUsername.Clear();
                     tbxEmail.Clear();
                     tbxWebsite.Clear();
@@ -46,19 +52,21 @@ namespace PasswordManagementApp.UserControls.HomeControls
                 }
                 else
                 {
-                    MessageBox.Show("Please make sure to fill in the mandatory (*) fields!", "Warning", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Please make sure to fill in the required (*) fields!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Data saving error: {ex.Message}","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                // Show message in case of an error
+                MessageBox.Show($"Error saving data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        // Click event handler for the generate password button
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            string password = encryptionHelper.GeneratePassword();
-            tbxPassword.Text = password;
+            string password = encryptionHelper.GeneratePassword(); // Generate a new password
+            tbxPassword.Text = password; // Write the generated password to the textbox
         }
     }
 }

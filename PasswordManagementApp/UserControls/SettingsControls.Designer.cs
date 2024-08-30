@@ -66,6 +66,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(15, 15, 15);
             label1.Location = new Point(90, 35);
             label1.Name = "label1";
             label1.Size = new Size(157, 54);
@@ -76,6 +77,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tajawal", 12F);
+            label2.ForeColor = Color.FromArgb(15, 15, 15);
             label2.Location = new Point(79, 173);
             label2.Name = "label2";
             label2.Size = new Size(165, 28);
@@ -84,6 +86,7 @@
             // 
             // btnGenerateSecretKey
             // 
+            btnGenerateSecretKey.ForeColor = Color.FromArgb(15, 15, 15);
             btnGenerateSecretKey.Location = new Point(79, 324);
             btnGenerateSecretKey.Name = "btnGenerateSecretKey";
             btnGenerateSecretKey.Size = new Size(94, 29);
@@ -96,6 +99,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tajawal", 12F);
+            label3.ForeColor = Color.FromArgb(15, 15, 15);
             label3.Location = new Point(79, 232);
             label3.Name = "label3";
             label3.Size = new Size(100, 28);
@@ -106,6 +110,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Tajawal", 12F);
+            label4.ForeColor = Color.FromArgb(15, 15, 15);
             label4.Location = new Point(79, 260);
             label4.Name = "label4";
             label4.Size = new Size(86, 28);
@@ -116,6 +121,7 @@
             // 
             lblIsThereSecretKey.AutoSize = true;
             lblIsThereSecretKey.Font = new Font("Tajawal", 12F);
+            lblIsThereSecretKey.ForeColor = Color.FromArgb(15, 15, 15);
             lblIsThereSecretKey.Location = new Point(250, 173);
             lblIsThereSecretKey.Name = "lblIsThereSecretKey";
             lblIsThereSecretKey.Size = new Size(54, 28);
@@ -126,6 +132,7 @@
             // 
             lblBase64KeyValue.AutoSize = true;
             lblBase64KeyValue.Font = new Font("Tajawal", 12F);
+            lblBase64KeyValue.ForeColor = Color.FromArgb(15, 15, 15);
             lblBase64KeyValue.Location = new Point(250, 232);
             lblBase64KeyValue.Name = "lblBase64KeyValue";
             lblBase64KeyValue.Size = new Size(24, 28);
@@ -136,6 +143,7 @@
             // 
             lblBase64IvValue.AutoSize = true;
             lblBase64IvValue.Font = new Font("Tajawal", 12F);
+            lblBase64IvValue.ForeColor = Color.FromArgb(15, 15, 15);
             lblBase64IvValue.Location = new Point(250, 260);
             lblBase64IvValue.Name = "lblBase64IvValue";
             lblBase64IvValue.Size = new Size(24, 28);

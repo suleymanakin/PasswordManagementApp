@@ -69,6 +69,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(15, 15, 15);
             label1.Location = new Point(90, 35);
             label1.Name = "label1";
             label1.Size = new Size(155, 54);
@@ -78,6 +79,7 @@
             // btnRegister
             // 
             btnRegister.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnRegister.ForeColor = Color.FromArgb(15, 15, 15);
             btnRegister.Location = new Point(341, 451);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(400, 40);
@@ -90,6 +92,7 @@
             // 
             tbxUserEmail.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbxUserEmail.Font = new Font("Tajawal", 12F);
+            tbxUserEmail.ForeColor = Color.FromArgb(15, 15, 15);
             tbxUserEmail.Location = new Point(340, 261);
             tbxUserEmail.Name = "tbxUserEmail";
             tbxUserEmail.Size = new Size(400, 35);
@@ -99,6 +102,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tajawal", 12F);
+            label3.ForeColor = Color.FromArgb(15, 15, 15);
             label3.Location = new Point(229, 264);
             label3.Name = "label3";
             label3.Size = new Size(107, 28);
@@ -109,6 +113,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Tajawal", 12F);
+            label4.ForeColor = Color.FromArgb(15, 15, 15);
             label4.Location = new Point(240, 324);
             label4.Name = "label4";
             label4.Size = new Size(96, 28);
@@ -119,6 +124,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tajawal", 12F);
+            label5.ForeColor = Color.FromArgb(15, 15, 15);
             label5.Location = new Point(219, 384);
             label5.Name = "label5";
             label5.Size = new Size(117, 28);
@@ -129,6 +135,7 @@
             // 
             tbxPassword.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbxPassword.Font = new Font("Tajawal", 12F);
+            tbxPassword.ForeColor = Color.FromArgb(15, 15, 15);
             tbxPassword.Location = new Point(340, 321);
             tbxPassword.Name = "tbxPassword";
             tbxPassword.PasswordChar = '*';
@@ -139,6 +146,7 @@
             // 
             tbxRepassword.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbxRepassword.Font = new Font("Tajawal", 12F);
+            tbxRepassword.ForeColor = Color.FromArgb(15, 15, 15);
             tbxRepassword.Location = new Point(340, 381);
             tbxRepassword.Name = "tbxRepassword";
             tbxRepassword.PasswordChar = '*';

@@ -73,6 +73,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(15, 15, 15);
             label1.Location = new Point(90, 35);
             label1.Name = "label1";
             label1.Size = new Size(348, 54);
@@ -83,6 +84,7 @@
             // 
             chkLowercase.AutoSize = true;
             chkLowercase.Font = new Font("Tajawal", 12F);
+            chkLowercase.ForeColor = Color.FromArgb(15, 15, 15);
             chkLowercase.Location = new Point(50, 190);
             chkLowercase.Name = "chkLowercase";
             chkLowercase.Size = new Size(123, 32);
@@ -94,6 +96,7 @@
             // 
             chkUppercase.AutoSize = true;
             chkUppercase.Font = new Font("Tajawal", 12F);
+            chkUppercase.ForeColor = Color.FromArgb(15, 15, 15);
             chkUppercase.Location = new Point(199, 190);
             chkUppercase.Name = "chkUppercase";
             chkUppercase.Size = new Size(124, 32);
@@ -105,6 +108,7 @@
             // 
             chkNumbers.AutoSize = true;
             chkNumbers.Font = new Font("Tajawal", 12F);
+            chkNumbers.ForeColor = Color.FromArgb(15, 15, 15);
             chkNumbers.Location = new Point(349, 190);
             chkNumbers.Name = "chkNumbers";
             chkNumbers.Size = new Size(111, 32);
@@ -116,6 +120,7 @@
             // 
             chkSpecialCharacters.AutoSize = true;
             chkSpecialCharacters.Font = new Font("Tajawal", 12F);
+            chkSpecialCharacters.ForeColor = Color.FromArgb(15, 15, 15);
             chkSpecialCharacters.Location = new Point(486, 190);
             chkSpecialCharacters.Name = "chkSpecialCharacters";
             chkSpecialCharacters.Size = new Size(190, 32);
@@ -127,6 +132,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tajawal", 12F);
+            label2.ForeColor = Color.FromArgb(15, 15, 15);
             label2.Location = new Point(702, 190);
             label2.Name = "label2";
             label2.Size = new Size(75, 28);
@@ -137,6 +143,7 @@
             // 
             tbxGeneratedPassword.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbxGeneratedPassword.Font = new Font("Tajawal", 12F);
+            tbxGeneratedPassword.ForeColor = Color.FromArgb(15, 15, 15);
             tbxGeneratedPassword.Location = new Point(50, 360);
             tbxGeneratedPassword.Multiline = true;
             tbxGeneratedPassword.Name = "tbxGeneratedPassword";
@@ -147,6 +154,7 @@
             // btnGenerate
             // 
             btnGenerate.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnGenerate.ForeColor = Color.FromArgb(15, 15, 15);
             btnGenerate.Location = new Point(366, 240);
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(250, 50);
@@ -159,6 +167,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tajawal", 12F);
+            label3.ForeColor = Color.FromArgb(15, 15, 15);
             label3.Location = new Point(50, 329);
             label3.Name = "label3";
             label3.Size = new Size(190, 28);
@@ -168,6 +177,7 @@
             // btnCopy
             // 
             btnCopy.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnCopy.ForeColor = Color.FromArgb(15, 15, 15);
             btnCopy.Location = new Point(366, 480);
             btnCopy.Name = "btnCopy";
             btnCopy.Size = new Size(250, 50);
@@ -180,6 +190,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Tajawal", 12F);
+            label4.ForeColor = Color.FromArgb(15, 15, 15);
             label4.Location = new Point(50, 600);
             label4.Name = "label4";
             label4.Size = new Size(85, 28);
@@ -190,6 +201,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tajawal", 12F);
+            label5.ForeColor = Color.FromArgb(15, 15, 15);
             label5.Location = new Point(501, 600);
             label5.Name = "label5";
             label5.Size = new Size(79, 28);
@@ -199,6 +211,7 @@
             // tbxLength
             // 
             tbxLength.Font = new Font("Tajawal", 12F);
+            tbxLength.ForeColor = Color.FromArgb(15, 15, 15);
             tbxLength.Location = new Point(783, 187);
             tbxLength.Name = "tbxLength";
             tbxLength.Size = new Size(149, 35);
@@ -207,6 +220,7 @@
             // tbxHashing
             // 
             tbxHashing.Font = new Font("Tajawal", 12F);
+            tbxHashing.ForeColor = Color.FromArgb(15, 15, 15);
             tbxHashing.Location = new Point(50, 649);
             tbxHashing.Name = "tbxHashing";
             tbxHashing.Size = new Size(431, 35);
@@ -215,6 +229,7 @@
             // tbxHashed
             // 
             tbxHashed.Font = new Font("Tajawal", 12F);
+            tbxHashed.ForeColor = Color.FromArgb(15, 15, 15);
             tbxHashed.Location = new Point(501, 649);
             tbxHashed.Name = "tbxHashed";
             tbxHashed.ScrollBars = ScrollBars.Both;

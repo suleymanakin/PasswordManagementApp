@@ -51,6 +51,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(15, 15, 15);
             label1.Location = new Point(90, 35);
             label1.Name = "label1";
             label1.Size = new Size(121, 54);
@@ -60,6 +61,7 @@
             // btnAddAPassword
             // 
             btnAddAPassword.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnAddAPassword.ForeColor = Color.FromArgb(15, 15, 15);
             btnAddAPassword.Image = (Image)resources.GetObject("btnAddAPassword.Image");
             btnAddAPassword.ImageAlign = ContentAlignment.MiddleLeft;
             btnAddAPassword.Location = new Point(291, 259);
@@ -76,6 +78,7 @@
             // btnUpdateAPassword
             // 
             btnUpdateAPassword.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnUpdateAPassword.ForeColor = Color.FromArgb(15, 15, 15);
             btnUpdateAPassword.Image = Properties.Resources.Update;
             btnUpdateAPassword.ImageAlign = ContentAlignment.MiddleLeft;
             btnUpdateAPassword.Location = new Point(291, 324);
@@ -92,6 +95,7 @@
             // btnDeleteAPassword
             // 
             btnDeleteAPassword.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnDeleteAPassword.ForeColor = Color.FromArgb(15, 15, 15);
             btnDeleteAPassword.Image = (Image)resources.GetObject("btnDeleteAPassword.Image");
             btnDeleteAPassword.ImageAlign = ContentAlignment.MiddleLeft;
             btnDeleteAPassword.Location = new Point(291, 389);
@@ -108,6 +112,7 @@
             // btnListPasswords
             // 
             btnListPasswords.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnListPasswords.ForeColor = Color.FromArgb(15, 15, 15);
             btnListPasswords.Image = Properties.Resources.List;
             btnListPasswords.ImageAlign = ContentAlignment.MiddleLeft;
             btnListPasswords.Location = new Point(291, 454);

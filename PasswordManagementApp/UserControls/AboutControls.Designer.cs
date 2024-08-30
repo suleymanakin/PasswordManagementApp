@@ -60,6 +60,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(15, 15, 15);
             label1.Location = new Point(90, 35);
             label1.Name = "label1";
             label1.Size = new Size(170, 54);
@@ -69,6 +70,7 @@
             // label2
             // 
             label2.Font = new Font("Tajawal", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(15, 15, 15);
             label2.Location = new Point(25, 128);
             label2.Name = "label2";
             label2.Size = new Size(932, 445);
@@ -79,6 +81,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tajawal", 22F, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(15, 15, 15);
             label3.Location = new Point(391, 573);
             label3.Name = "label3";
             label3.Size = new Size(200, 54);
@@ -89,6 +92,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Tajawal", 12F);
+            label4.ForeColor = Color.FromArgb(15, 15, 15);
             label4.Location = new Point(309, 650);
             label4.Name = "label4";
             label4.Size = new Size(72, 28);
@@ -99,6 +103,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tajawal", 12F);
+            label5.ForeColor = Color.FromArgb(15, 15, 15);
             label5.Location = new Point(294, 700);
             label5.Name = "label5";
             label5.Size = new Size(87, 28);
@@ -109,6 +114,7 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Tajawal", 12F);
+            linkLabel1.ForeColor = Color.FromArgb(15, 15, 15);
             linkLabel1.Location = new Point(387, 650);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(137, 28);
@@ -120,6 +126,7 @@
             // 
             linkLabel2.AutoSize = true;
             linkLabel2.Font = new Font("Tajawal", 12F);
+            linkLabel2.ForeColor = Color.FromArgb(15, 15, 15);
             linkLabel2.Location = new Point(387, 700);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(137, 28);
@@ -131,6 +138,7 @@
             // 
             linkLabel3.AutoSize = true;
             linkLabel3.Font = new Font("Tajawal", 12F);
+            linkLabel3.ForeColor = Color.FromArgb(15, 15, 15);
             linkLabel3.Location = new Point(558, 700);
             linkLabel3.Name = "linkLabel3";
             linkLabel3.Size = new Size(131, 28);
@@ -142,6 +150,7 @@
             // 
             linkLabel4.AutoSize = true;
             linkLabel4.Font = new Font("Tajawal", 12F);
+            linkLabel4.ForeColor = Color.FromArgb(15, 15, 15);
             linkLabel4.Location = new Point(558, 650);
             linkLabel4.Name = "linkLabel4";
             linkLabel4.Size = new Size(131, 28);
@@ -153,6 +162,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Tajawal", 12F);
+            label6.ForeColor = Color.FromArgb(15, 15, 15);
             label6.Location = new Point(530, 650);
             label6.Name = "label6";
             label6.Size = new Size(22, 28);
@@ -163,6 +173,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Tajawal", 12F);
+            label7.ForeColor = Color.FromArgb(15, 15, 15);
             label7.Location = new Point(530, 700);
             label7.Name = "label7";
             label7.Size = new Size(22, 28);
@@ -194,6 +205,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(pnlHeader);
+            ForeColor = Color.FromArgb(15, 15, 15);
             Name = "pnlAboutControls";
             Size = new Size(982, 753);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

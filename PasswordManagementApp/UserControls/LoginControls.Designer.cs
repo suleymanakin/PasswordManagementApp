@@ -64,6 +64,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(15, 15, 15);
             label1.Location = new Point(90, 35);
             label1.Name = "label1";
             label1.Size = new Size(109, 54);
@@ -74,6 +75,7 @@
             // 
             tbxPassword.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbxPassword.Font = new Font("Tajawal", 12F);
+            tbxPassword.ForeColor = Color.FromArgb(15, 15, 15);
             tbxPassword.Location = new Point(347, 351);
             tbxPassword.Name = "tbxPassword";
             tbxPassword.PasswordChar = '*';
@@ -84,6 +86,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Tajawal", 12F);
+            label4.ForeColor = Color.FromArgb(15, 15, 15);
             label4.Location = new Point(247, 350);
             label4.Name = "label4";
             label4.Size = new Size(96, 28);
@@ -93,6 +96,7 @@
             // btnLogin
             // 
             btnLogin.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnLogin.ForeColor = Color.FromArgb(15, 15, 15);
             btnLogin.Location = new Point(347, 421);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(400, 40);
@@ -105,6 +109,7 @@
             // 
             tbxUserEmail.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbxUserEmail.Font = new Font("Tajawal", 12F);
+            tbxUserEmail.ForeColor = Color.FromArgb(15, 15, 15);
             tbxUserEmail.Location = new Point(347, 291);
             tbxUserEmail.Name = "tbxUserEmail";
             tbxUserEmail.Size = new Size(400, 35);
@@ -114,6 +119,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tajawal", 12F);
+            label3.ForeColor = Color.FromArgb(15, 15, 15);
             label3.Location = new Point(236, 294);
             label3.Name = "label3";
             label3.Size = new Size(107, 28);

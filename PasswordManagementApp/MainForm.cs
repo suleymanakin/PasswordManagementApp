@@ -2,14 +2,13 @@ using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using PasswordManagementApp.Classes;
 using PasswordManagementApp.UserControls;
-using System;
-using System.Windows.Forms;
 using System.Net.NetworkInformation;
 
 namespace PasswordManagementApp
 {
     public partial class MainForm : Form
     {
+        // Properties for accessing buttons
         public Button BtnLogin => btnLogin;
         public Button BtnRegister => btnRegister;
         public Button BtnHome => btnHome;
@@ -22,8 +21,10 @@ namespace PasswordManagementApp
         private MainFormHelper helper;
         private static MainForm? instance;
 
+        // Variable to check if Firebase has been initialized
         private static bool isFirebaseInitialized = false;
 
+        // Singleton instance
         public static MainForm Instance
         {
             get
@@ -42,6 +43,7 @@ namespace PasswordManagementApp
             InitializeFirebase(@"..\..\..\UserFiles\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json");
             helper = new MainFormHelper(this);
 
+            // Event handlers for changing button colors
             btnLogin.Click += ChangeButtonColor;
             btnRegister.Click += ChangeButtonColor;
             btnHome.Click += ChangeButtonColor;
@@ -49,33 +51,39 @@ namespace PasswordManagementApp
             btnAbout.Click += ChangeButtonColor;
             btnSettings.Click += ChangeButtonColor;
 
-            // Ýlk durumda butonlarýn rengi siyah olsun
+            // Set default button colors initially
             SetButtonsDefaultColor();
         }
+
+        // Event triggered when the form loads
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // Check internet connection and close the application if not connected
             if (!CheckInternetConnection())
             {
-                MessageBox.Show("Please check your internet connection and try again.", "Ýnformation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Please check your internet connection and try again.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
+
+            // Check if SecretKey.json file exists; if not, prompt to create it
             string folderPath = @"..\..\..\UserFiles\";
             string fileName = "SecretKey.json";
-
             string filePath = Path.Combine(folderPath, fileName);
-
-            panelLogo.Visible = false;
-            helper.menuAfterLoggingOut();
-            helper.LoadControl(new pnlWelcome());
 
             if (!File.Exists(filePath))
             {
                 MessageBox.Show("SecretKey not found. You are being redirected to create it.\n" +
-                    "Encryption and decryption cannot be performed without creating a SecretKey.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    "Encryption and decryption cannot be performed without creating a SecretKey.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 helper.LoadControl(new pnlSettingsControls());
             }
+
+            // Load default logo, menu, and content area
+            panelLogo.Visible = false;
+            helper.menuAfterLoggingOut();
+            helper.LoadControl(new pnlWelcome());
         }
 
+        // Initializes Firebase
         private void InitializeFirebase(string credentialsPath)
         {
             if (!isFirebaseInitialized)
@@ -88,29 +96,34 @@ namespace PasswordManagementApp
             }
         }
 
+        // Event handler for the Login button click
         private void btnLogin_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlLoginControls(this));
             panelLogo.Visible = true;
         }
 
+        // Event handler for the Register button click
         private void btnRegister_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlRegisterControls(this));
             panelLogo.Visible = true;
         }
 
+        // Event handler for the Home button click
         public void btnHome_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlHomeControls(this));
         }
 
+        // Event handler for the Generate Password button click
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlGenerateControls());
             panelLogo.Visible = true;
         }
 
+        // Event handler for the Logout button click
         private void btnLogout_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlGoobye());
@@ -118,54 +131,59 @@ namespace PasswordManagementApp
             SetButtonsDefaultColor();
         }
 
+        // Event handler for the About button click
         private void btnAbout_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlAboutControls());
             panelLogo.Visible = true;
         }
 
+        // Event handler for the Settings button click
         private void btnSettings_Click(object sender, EventArgs e)
         {
             helper.LoadControl(new pnlSettingsControls());
             panelLogo.Visible = true;
         }
 
+        // Changes the color of the button that was clicked
         private void ChangeButtonColor(object sender, EventArgs e)
         {
-            // Tüm butonlarýn rengini siyah yap
+            // Sets all buttons to default color
             SetButtonsDefaultColor();
 
-            // Týklanan butonu bul ve rengini mavi yap
+            // Finds the clicked button and changes its color to blue
             Button clickedButton = sender as Button;
             if (clickedButton != null)
             {
-                clickedButton.ForeColor = ColorTranslator.FromHtml("#077EFF");
+                clickedButton.ForeColor = ColorTranslator.FromHtml("#277ECC");
                 string imgFile = @"..\..\..\img\icons\" + clickedButton.Text.Trim() + "Blue.png";
                 clickedButton.Image = Image.FromFile(imgFile);
             }
         }
 
+        // Sets the default color and image for all buttons
         private void SetButtonsDefaultColor()
         {
-            btnLogin.ForeColor = Color.DimGray;
+            btnLogin.ForeColor = ColorTranslator.FromHtml("#0F0F0F");
             btnLogin.Image = Image.FromFile(@"..\..\..\img\icons\Login.png");
 
-            btnRegister.ForeColor = Color.DimGray;
+            btnRegister.ForeColor = ColorTranslator.FromHtml("#0F0F0F");
             btnRegister.Image = Image.FromFile(@"..\..\..\img\icons\Register.png");
 
-            btnHome.ForeColor = Color.DimGray;
+            btnHome.ForeColor = ColorTranslator.FromHtml("#0F0F0F");
             btnHome.Image = Image.FromFile(@"..\..\..\img\icons\Home.png");
 
-            btnGenerate.ForeColor = Color.DimGray;
+            btnGenerate.ForeColor = ColorTranslator.FromHtml("#0F0F0F");
             btnGenerate.Image = Image.FromFile(@"..\..\..\img\icons\Generate.png");
 
-            btnAbout.ForeColor = Color.DimGray;
+            btnAbout.ForeColor = ColorTranslator.FromHtml("#0F0F0F");
             btnAbout.Image = Image.FromFile(@"..\..\..\img\icons\About.png");
 
-            btnSettings.ForeColor = Color.DimGray;
+            btnSettings.ForeColor = ColorTranslator.FromHtml("#0F0F0F");
             btnSettings.Image = Image.FromFile(@"..\..\..\img\icons\Settings.png");
         }
 
+        // Checks for an internet connection
         public bool CheckInternetConnection()
         {
             try

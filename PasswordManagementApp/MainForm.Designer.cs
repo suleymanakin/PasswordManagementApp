@@ -85,6 +85,7 @@
             btnLogout.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnLogout.ForeColor = Color.FromArgb(15, 15, 15);
             btnLogout.Image = Properties.Resources.Logout;
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
             btnLogout.Location = new Point(48, 439);
@@ -104,6 +105,7 @@
             btnSettings.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
             btnSettings.FlatStyle = FlatStyle.Flat;
             btnSettings.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnSettings.ForeColor = Color.FromArgb(15, 15, 15);
             btnSettings.Image = Properties.Resources.Settings;
             btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
             btnSettings.Location = new Point(0, 300);
@@ -124,6 +126,7 @@
             btnAbout.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
             btnAbout.FlatStyle = FlatStyle.Flat;
             btnAbout.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnAbout.ForeColor = Color.FromArgb(15, 15, 15);
             btnAbout.Image = Properties.Resources.About;
             btnAbout.ImageAlign = ContentAlignment.MiddleLeft;
             btnAbout.Location = new Point(0, 240);
@@ -144,6 +147,7 @@
             btnGenerate.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
             btnGenerate.FlatStyle = FlatStyle.Flat;
             btnGenerate.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnGenerate.ForeColor = Color.FromArgb(15, 15, 15);
             btnGenerate.Image = Properties.Resources.Generate;
             btnGenerate.ImageAlign = ContentAlignment.MiddleLeft;
             btnGenerate.Location = new Point(0, 180);
@@ -165,6 +169,7 @@
             btnHome.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnHome.ForeColor = Color.FromArgb(15, 15, 15);
             btnHome.Image = Properties.Resources.Home;
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
             btnHome.Location = new Point(0, 120);
@@ -185,6 +190,7 @@
             btnRegister.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
             btnRegister.FlatStyle = FlatStyle.Flat;
             btnRegister.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnRegister.ForeColor = Color.FromArgb(15, 15, 15);
             btnRegister.Image = Properties.Resources.Register;
             btnRegister.ImageAlign = ContentAlignment.MiddleLeft;
             btnRegister.Location = new Point(0, 60);
@@ -206,6 +212,7 @@
             btnLogin.FlatAppearance.MouseOverBackColor = SystemColors.ControlLight;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Tajawal", 12F, FontStyle.Bold);
+            btnLogin.ForeColor = Color.FromArgb(15, 15, 15);
             btnLogin.Image = Properties.Resources.Login;
             btnLogin.ImageAlign = ContentAlignment.MiddleLeft;
             btnLogin.Location = new Point(0, 0);
@@ -255,6 +262,7 @@
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Courier Prime", 12F);
+            lblPassword.ForeColor = Color.FromArgb(15, 15, 15);
             lblPassword.Location = new Point(136, 44);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(108, 27);
@@ -265,6 +273,7 @@
             // 
             lblApp.AutoSize = true;
             lblApp.Font = new Font("Courier Prime", 12F);
+            lblApp.ForeColor = Color.FromArgb(15, 15, 15);
             lblApp.Location = new Point(136, 84);
             lblApp.Name = "lblApp";
             lblApp.Size = new Size(48, 27);
@@ -275,6 +284,7 @@
             // 
             lblManagement.AutoSize = true;
             lblManagement.Font = new Font("Courier Prime", 12F);
+            lblManagement.ForeColor = Color.FromArgb(15, 15, 15);
             lblManagement.Location = new Point(136, 64);
             lblManagement.Name = "lblManagement";
             lblManagement.Size = new Size(132, 27);

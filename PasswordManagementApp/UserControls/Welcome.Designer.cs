@@ -65,6 +65,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Courier Prime", 8F);
+            label4.ForeColor = Color.FromArgb(15, 15, 15);
             label4.Location = new Point(209, 191);
             label4.Name = "label4";
             label4.Size = new Size(272, 18);
@@ -75,6 +76,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Courier Prime", 22F);
+            label2.ForeColor = Color.FromArgb(15, 15, 15);
             label2.Location = new Point(205, 111);
             label2.Name = "label2";
             label2.Size = new Size(240, 48);
@@ -85,6 +87,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Courier Prime", 22F);
+            label3.ForeColor = Color.FromArgb(15, 15, 15);
             label3.Location = new Point(205, 74);
             label3.Name = "label3";
             label3.Size = new Size(196, 48);
@@ -95,6 +98,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Courier Prime", 22F);
+            label1.ForeColor = Color.FromArgb(15, 15, 15);
             label1.Location = new Point(205, 148);
             label1.Name = "label1";
             label1.Size = new Size(86, 48);

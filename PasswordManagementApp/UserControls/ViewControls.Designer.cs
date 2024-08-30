@@ -78,6 +78,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(15, 15, 15);
             label1.Location = new Point(90, 10);
             label1.Name = "label1";
             label1.Size = new Size(276, 54);
@@ -97,6 +98,7 @@
             // 
             // btnUpdate
             // 
+            btnUpdate.ForeColor = Color.FromArgb(15, 15, 15);
             btnUpdate.Image = Properties.Resources.Update;
             btnUpdate.Location = new Point(846, 613);
             btnUpdate.Name = "btnUpdate";
@@ -107,6 +109,7 @@
             // 
             // btnDelete
             // 
+            btnDelete.ForeColor = Color.FromArgb(15, 15, 15);
             btnDelete.Image = Properties.Resources.Remove;
             btnDelete.Location = new Point(907, 613);
             btnDelete.Name = "btnDelete";
@@ -119,6 +122,7 @@
             // 
             tbxPlatformName.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbxPlatformName.Font = new Font("Tajawal", 10.2F);
+            tbxPlatformName.ForeColor = Color.FromArgb(15, 15, 15);
             tbxPlatformName.Location = new Point(152, 665);
             tbxPlatformName.Name = "tbxPlatformName";
             tbxPlatformName.Size = new Size(250, 31);
@@ -128,6 +132,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Tajawal", 10.2F);
+            label3.ForeColor = Color.FromArgb(15, 15, 15);
             label3.Location = new Point(25, 668);
             label3.Name = "label3";
             label3.Size = new Size(122, 23);
@@ -138,6 +143,7 @@
             // 
             tbxPassword.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbxPassword.Font = new Font("Tajawal", 10.2F);
+            tbxPassword.ForeColor = Color.FromArgb(15, 15, 15);
             tbxPassword.Location = new Point(572, 712);
             tbxPassword.Name = "tbxPassword";
             tbxPassword.Size = new Size(250, 31);
@@ -147,6 +153,7 @@
             // 
             tbxWebsite.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbxWebsite.Font = new Font("Tajawal", 10.2F);
+            tbxWebsite.ForeColor = Color.FromArgb(15, 15, 15);
             tbxWebsite.Location = new Point(572, 665);
             tbxWebsite.Name = "tbxWebsite";
             tbxWebsite.Size = new Size(250, 31);
@@ -156,6 +163,7 @@
             // 
             tbxEmail.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbxEmail.Font = new Font("Tajawal", 10.2F);
+            tbxEmail.ForeColor = Color.FromArgb(15, 15, 15);
             tbxEmail.Location = new Point(572, 621);
             tbxEmail.Name = "tbxEmail";
             tbxEmail.Size = new Size(250, 31);
@@ -165,6 +173,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Tajawal", 10.2F);
+            label6.ForeColor = Color.FromArgb(15, 15, 15);
             label6.Location = new Point(484, 715);
             label6.Name = "label6";
             label6.Size = new Size(82, 23);
@@ -175,6 +184,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Tajawal", 10.2F);
+            label5.ForeColor = Color.FromArgb(15, 15, 15);
             label5.Location = new Point(495, 668);
             label5.Name = "label5";
             label5.Size = new Size(71, 23);
@@ -185,6 +195,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Tajawal", 10.2F);
+            label2.ForeColor = Color.FromArgb(15, 15, 15);
             label2.Location = new Point(513, 624);
             label2.Name = "label2";
             label2.Size = new Size(53, 23);
@@ -195,6 +206,7 @@
             // 
             tbxUsername.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbxUsername.Font = new Font("Tajawal", 10.2F);
+            tbxUsername.ForeColor = Color.FromArgb(15, 15, 15);
             tbxUsername.Location = new Point(152, 712);
             tbxUsername.Name = "tbxUsername";
             tbxUsername.Size = new Size(250, 31);
@@ -204,6 +216,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Tajawal", 10.2F);
+            label4.ForeColor = Color.FromArgb(15, 15, 15);
             label4.Location = new Point(61, 715);
             label4.Name = "label4";
             label4.Size = new Size(86, 23);
@@ -212,6 +225,7 @@
             // 
             // btnGenerate
             // 
+            btnGenerate.ForeColor = Color.FromArgb(15, 15, 15);
             btnGenerate.Image = Properties.Resources.Generate;
             btnGenerate.Location = new Point(846, 693);
             btnGenerate.Name = "btnGenerate";
@@ -224,6 +238,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Tajawal", 10.2F);
+            label7.ForeColor = Color.FromArgb(15, 15, 15);
             label7.Location = new Point(47, 624);
             label7.Name = "label7";
             label7.Size = new Size(100, 23);
@@ -234,6 +249,7 @@
             // 
             lblPassswordID.AutoSize = true;
             lblPassswordID.Font = new Font("Tajawal", 10.2F);
+            lblPassswordID.ForeColor = Color.FromArgb(15, 15, 15);
             lblPassswordID.Location = new Point(153, 624);
             lblPassswordID.Name = "lblPassswordID";
             lblPassswordID.Size = new Size(20, 23);
@@ -242,6 +258,7 @@
             // 
             // btnClear
             // 
+            btnClear.ForeColor = Color.FromArgb(15, 15, 15);
             btnClear.Image = (Image)resources.GetObject("btnClear.Image");
             btnClear.Location = new Point(907, 693);
             btnClear.Name = "btnClear";

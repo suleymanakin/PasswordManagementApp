@@ -49,6 +49,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 22F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(15, 15, 15);
             label1.Location = new Point(394, 356);
             label1.Name = "label1";
             label1.Size = new Size(194, 54);
@@ -59,6 +60,7 @@
             // 
             lblVerifiedUser.AutoSize = true;
             lblVerifiedUser.Font = new Font("Tajawal", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblVerifiedUser.ForeColor = Color.FromArgb(15, 15, 15);
             lblVerifiedUser.Location = new Point(474, 456);
             lblVerifiedUser.Name = "lblVerifiedUser";
             lblVerifiedUser.Size = new Size(34, 41);

@@ -35,6 +35,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tajawal", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(15, 15, 15);
             label1.Location = new Point(314, 356);
             label1.Name = "label1";
             label1.Size = new Size(355, 41);
