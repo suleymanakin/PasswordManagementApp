@@ -31,6 +31,13 @@ namespace PasswordManagementApp.UserControls
         private async void pnlViewControls_Load(object sender, EventArgs e)
         {
             await LoadDataGridView();
+
+            ToolTip toolTip = new ToolTip();
+
+            toolTip.SetToolTip(this.btnUpdate, "Update");
+            toolTip.SetToolTip(this.btnGenerate, "Generate");
+            toolTip.SetToolTip(this.btnClear, "Clear");
+            toolTip.SetToolTip(this.btnDelete, "Delete");
         }
 
         // Fills the DataGridView with data

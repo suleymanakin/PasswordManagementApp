@@ -47,7 +47,8 @@ public class UserDataService
             var passwordData = new Dictionary<string, object>
             {
                 { "PasswordID", encryptionHelper.Encrypt(saveId) },
-                { "PlatformName",encryptionHelper.Encrypt( platformName) },
+                //{ "PlatformName",encryptionHelper.Encrypt( platformName) },
+                { "PlatformName",platformName },
                 { "UserName", encryptionHelper.Encrypt(userName) },
                 { "Email", encryptionHelper.Encrypt(email) },
                 { "Website", encryptionHelper.Encrypt(website) },
@@ -88,7 +89,7 @@ public class UserDataService
                 var decryptedData = new Dictionary<string, object>
                 {
                     { "PasswordID", encryptionHelper.Decrypt(document.GetValue<string>("PasswordID")) },
-                    { "PlatformName", encryptionHelper.Decrypt(document.GetValue<string>("PlatformName")) },
+                    { "PlatformName", document.GetValue<string>("PlatformName") },
                     { "UserName", encryptionHelper.Decrypt(document.GetValue<string>("UserName")) },
                     { "Email", encryptionHelper.Decrypt(document.GetValue<string>("Email")) },
                     { "Website", encryptionHelper.Decrypt(document.GetValue<string>("Website")) },
@@ -127,7 +128,7 @@ public class UserDataService
             var updatedData = new Dictionary<string, object>
             {
                 { "PasswordID", encryptionHelper.Encrypt(passwordID) },
-                { "PlatformName", encryptionHelper.Encrypt(platformName) },
+                { "PlatformName", platformName },
                 { "UserName", encryptionHelper.Encrypt(username) },
                 { "Email", encryptionHelper.Encrypt(email) },
                 { "Website", encryptionHelper.Encrypt(website) },
