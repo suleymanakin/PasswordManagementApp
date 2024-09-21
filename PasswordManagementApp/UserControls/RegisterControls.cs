@@ -33,7 +33,7 @@ namespace PasswordManagementApp.UserControls
                 // Checks if the passwords match
                 if (password == rePassword)
                 {
-                    string credentialsPath = @"..\..\..\UserFiles\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json";
+                    string credentialsPath = @"..\..\..\UserFiles\FirebaseAdminSDK.json";
 
                     // Initializes FirebaseService
                     FirebaseService firebaseService = new FirebaseService(credentialsPath);

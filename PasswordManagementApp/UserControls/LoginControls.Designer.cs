@@ -36,6 +36,7 @@
             btnLogin = new Button();
             tbxUserEmail = new TextBox();
             label3 = new Label();
+            linkLabel1 = new LinkLabel();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -126,10 +127,25 @@
             label3.TabIndex = 16;
             label3.Text = "User Email:";
             // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Tajawal", 12F);
+            linkLabel1.ForeColor = Color.FromArgb(15, 15, 15);
+            linkLabel1.LinkColor = Color.FromArgb(39, 126, 204);
+            linkLabel1.Location = new Point(553, 492);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(194, 28);
+            linkLabel1.TabIndex = 21;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "I forgot my password";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            // 
             // pnlLoginControls
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(linkLabel1);
             Controls.Add(tbxPassword);
             Controls.Add(label4);
             Controls.Add(btnLogin);
@@ -155,5 +171,6 @@
         private TextBox tbxUserEmail;
         private Label label3;
         private PictureBox pictureBox1;
+        private LinkLabel linkLabel1;
     }
 }

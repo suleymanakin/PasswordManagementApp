@@ -40,7 +40,7 @@ namespace PasswordManagementApp
         public MainForm()
         {
             InitializeComponent();
-            InitializeFirebase(@"..\..\..\UserFiles\fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json");
+            InitializeFirebase(@"..\..\..\UserFiles\FirebaseAdminSDK.json");
             helper = new MainFormHelper(this);
 
             // Event handlers for changing button colors

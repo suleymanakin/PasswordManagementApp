@@ -20,7 +20,7 @@ namespace PasswordManagementApp.UserControls
         {
             InitializeComponent();
             string folderDirect = @"..\..\..\UserFiles\"; // Firebase Folder Direct
-            string fileName = "fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json"; // Firebase Admin SDK file name
+            string fileName = "FirebaseAdminSDK.json"; // Firebase Admin SDK file name
             string filePath = folderDirect + fileName;
             string credentialsPath = filePath;
             string projectId = "fir-test-3647d"; //Firebase Project ID
@@ -104,16 +104,24 @@ namespace PasswordManagementApp.UserControls
             string Website = tbxWebsite.Text;
             string Password = tbxPassword.Text;
 
-            if (await userDataService.UpdateUserPasswordsAsync(PasswordID, PlatformName, Username, Email, Website, Password))
+            if (Password.Length >= 6)
             {
-                // Reloads the DataGridView and clears the fields if the update is successful
-                await LoadDataGridView();
-                InputCleaner();
+
+                if (await userDataService.UpdateUserPasswordsAsync(PasswordID, PlatformName, Username, Email, Website, Password))
+                {
+                    // Reloads the DataGridView and clears the fields if the update is successful
+                    await LoadDataGridView();
+                    InputCleaner();
+                }
+                else
+                {
+                    // Shows a warning message if the update fails or no content is found to update
+                    MessageBox.Show("Update failed or no content found to update.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                // Shows a warning message if the update fails or no content is found to update
-                MessageBox.Show("Update failed or no content found to update.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Password must be at least 6 characters!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

@@ -18,7 +18,7 @@ namespace PasswordManagementApp.UserControls.HomeControls
         {
             InitializeComponent();
             string folderDirect = @"..\..\..\UserFiles\"; // Firebase Folder Direct
-            string fileName = "fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json"; // Firebase Admin SDK file name
+            string fileName = "FirebaseAdminSDK.json"; // Firebase Admin SDK file name
             string filePath = folderDirect + fileName;
             string credentialsPath = filePath;
             string projectId = "fir-test-3647d";

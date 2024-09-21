@@ -20,7 +20,7 @@ namespace PasswordManagementApp.UserControls
             InitializeComponent();
             authService = new AuthService("AIzaSyDJvsRx7pzZw5gcw7gsT_SGl9su8ktJSnI"); // Sets the authentication service API key
             string folderDirect = @"..\..\..\UserFiles\"; // Firebase Folder Direct
-            string fileName = "fir-test-3647d-firebase-adminsdk-xmfdu-dbfdcc74af.json"; // Firebase Admin SDK file name
+            string fileName = "FirebaseAdminSDK.json"; // Firebase Admin SDK file name
             string filePath = folderDirect + fileName;
             string credentialsPath = filePath;
             string projectId = "fir-test-3647d"; // Firebase project ID
@@ -49,6 +49,11 @@ namespace PasswordManagementApp.UserControls
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); // Displays an error message
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            helper.LoadControl(new pnlResetPassword());
         }
     }
 }
