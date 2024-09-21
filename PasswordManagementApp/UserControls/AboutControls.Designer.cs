@@ -35,12 +35,8 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            linkLabel1 = new LinkLabel();
-            linkLabel2 = new LinkLabel();
-            linkLabel3 = new LinkLabel();
-            linkLabel4 = new LinkLabel();
-            label6 = new Label();
-            label7 = new Label();
+            lnklblGithub1 = new LinkLabel();
+            lnklblLinkedIn1 = new LinkLabel();
             pnlHeader = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlHeader.SuspendLayout();
@@ -93,7 +89,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Tajawal", 12F);
             label4.ForeColor = Color.FromArgb(15, 15, 15);
-            label4.Location = new Point(309, 650);
+            label4.Location = new Point(391, 650);
             label4.Name = "label4";
             label4.Size = new Size(72, 28);
             label4.TabIndex = 2;
@@ -104,81 +100,39 @@
             label5.AutoSize = true;
             label5.Font = new Font("Tajawal", 12F);
             label5.ForeColor = Color.FromArgb(15, 15, 15);
-            label5.Location = new Point(294, 700);
+            label5.Location = new Point(376, 700);
             label5.Name = "label5";
             label5.Size = new Size(87, 28);
             label5.TabIndex = 2;
             label5.Text = "LinkedIn:";
             // 
-            // linkLabel1
+            // lnklblGithub1
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Tajawal", 12F);
-            linkLabel1.ForeColor = Color.FromArgb(15, 15, 15);
-            linkLabel1.Location = new Point(387, 650);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(137, 28);
-            linkLabel1.TabIndex = 7;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Suleyman AKIN";
+            lnklblGithub1.AutoSize = true;
+            lnklblGithub1.Font = new Font("Tajawal", 12F);
+            lnklblGithub1.ForeColor = Color.FromArgb(15, 15, 15);
+            lnklblGithub1.LinkColor = Color.FromArgb(39, 126, 204);
+            lnklblGithub1.Location = new Point(469, 650);
+            lnklblGithub1.Name = "lnklblGithub1";
+            lnklblGithub1.Size = new Size(137, 28);
+            lnklblGithub1.TabIndex = 7;
+            lnklblGithub1.TabStop = true;
+            lnklblGithub1.Text = "Suleyman AKIN";
+            lnklblGithub1.LinkClicked += lnklblGithub1_LinkClicked;
             // 
-            // linkLabel2
+            // lnklblLinkedIn1
             // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.Font = new Font("Tajawal", 12F);
-            linkLabel2.ForeColor = Color.FromArgb(15, 15, 15);
-            linkLabel2.Location = new Point(387, 700);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(137, 28);
-            linkLabel2.TabIndex = 9;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Suleyman AKIN";
-            // 
-            // linkLabel3
-            // 
-            linkLabel3.AutoSize = true;
-            linkLabel3.Font = new Font("Tajawal", 12F);
-            linkLabel3.ForeColor = Color.FromArgb(15, 15, 15);
-            linkLabel3.Location = new Point(558, 700);
-            linkLabel3.Name = "linkLabel3";
-            linkLabel3.Size = new Size(131, 28);
-            linkLabel3.TabIndex = 10;
-            linkLabel3.TabStop = true;
-            linkLabel3.Text = "Nazmi SIMSEK";
-            // 
-            // linkLabel4
-            // 
-            linkLabel4.AutoSize = true;
-            linkLabel4.Font = new Font("Tajawal", 12F);
-            linkLabel4.ForeColor = Color.FromArgb(15, 15, 15);
-            linkLabel4.Location = new Point(558, 650);
-            linkLabel4.Name = "linkLabel4";
-            linkLabel4.Size = new Size(131, 28);
-            linkLabel4.TabIndex = 8;
-            linkLabel4.TabStop = true;
-            linkLabel4.Text = "Nazmi SIMSEK";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Tajawal", 12F);
-            label6.ForeColor = Color.FromArgb(15, 15, 15);
-            label6.Location = new Point(530, 650);
-            label6.Name = "label6";
-            label6.Size = new Size(22, 28);
-            label6.TabIndex = 6;
-            label6.Text = "||";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Tajawal", 12F);
-            label7.ForeColor = Color.FromArgb(15, 15, 15);
-            label7.Location = new Point(530, 700);
-            label7.Name = "label7";
-            label7.Size = new Size(22, 28);
-            label7.TabIndex = 7;
-            label7.Text = "||";
+            lnklblLinkedIn1.AutoSize = true;
+            lnklblLinkedIn1.Font = new Font("Tajawal", 12F);
+            lnklblLinkedIn1.ForeColor = Color.FromArgb(15, 15, 15);
+            lnklblLinkedIn1.LinkColor = Color.FromArgb(39, 126, 204);
+            lnklblLinkedIn1.Location = new Point(469, 700);
+            lnklblLinkedIn1.Name = "lnklblLinkedIn1";
+            lnklblLinkedIn1.Size = new Size(137, 28);
+            lnklblLinkedIn1.TabIndex = 9;
+            lnklblLinkedIn1.TabStop = true;
+            lnklblLinkedIn1.Text = "Suleyman AKIN";
+            lnklblLinkedIn1.LinkClicked += lnklblLinkedIn1_LinkClicked_1;
             // 
             // pnlHeader
             // 
@@ -194,12 +148,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(linkLabel3);
-            Controls.Add(linkLabel4);
-            Controls.Add(linkLabel2);
-            Controls.Add(linkLabel1);
+            Controls.Add(lnklblLinkedIn1);
+            Controls.Add(lnklblGithub1);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -221,12 +171,8 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private LinkLabel linkLabel1;
-        private LinkLabel linkLabel2;
-        private LinkLabel linkLabel3;
-        private LinkLabel linkLabel4;
-        private Label label6;
-        private Label label7;
+        private LinkLabel lnklblGithub1;
+        private LinkLabel lnklblLinkedIn1;
         private PictureBox pictureBox1;
         private Panel pnlHeader;
     }
