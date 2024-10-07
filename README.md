@@ -49,7 +49,7 @@ Uygulamayı ilk kez çalıştırdığınızda, şifreleme için gerekli olan Sec
 
 ## Kullanım
 1. Uygulamayı Başlatın
-2. Giriş Yapın (Hesabınız yoksa Kayıt olun)
+2. Giriş Yapın (Hesabınız yoksa Kayıt olun) (Test Hesabı: mail=test@test.com parola=123456)
 3. Home menüsünden Şifre ekleyebilir yada görüntüleyebilirsiniz. Güncelleme ve silme işlemleri ***List Passwords*** üzerinden yapılır.
 4. Şifre Oluşturma ve Saklama
 5. Şifre Güncelleme ve Silme
@@ -118,7 +118,7 @@ When you run the application for the first time, you will need to create the Sec
 
 ## Usage
 1. Start the application
-2. Log in (Register if you do not have an account)
+2. Log in (Register if you do not have an account) (Test Account: mail=test@test.com password=123456)
 3. You can add or view passwords from the Home menu. Update and delete operations are done via ***List Passwords***.
 4. Creating and Storing Passwords
 5. Updating and Deleting Passwords
